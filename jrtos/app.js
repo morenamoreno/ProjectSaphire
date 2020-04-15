@@ -11,6 +11,9 @@ var db = monk('localhost:27017/jrtos');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var administratorRouter = require('./routes/administrator');
+var parentRouter = require('./routes/parent');
+var teacherRouter = require('./routes/teacher');
 
 var app = express();
 
@@ -31,6 +34,9 @@ app.use(function(req,res,next){
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/administrator', administratorRouter);
+app.use('/parent', parentRouter);
+app.use('/teacher', teacherRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

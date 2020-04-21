@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<!--head-->
+
+<head>
+    <title>BizaIT - IT Consultant</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="images/icon.png">
+    <link href="main.css" rel="stylesheet" type="text/css" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<!-- end of the head-->
+
+<!-- body start -->
+
+<body>
+
+    <!-- Header -->
+    <header class="header-wrapper" id="myHeader">
+        <a href="index.html" class="header-brand"><strong>BizaIT</strong></a>
+
+        <!-- Navigation -->
+        <nav class="navbar">
+            <ul>
+                <li class="active">HOME</li>
+                <li><a href="servicepage.html">SERVICES</a></li>
+                <li><a href="newspage.html">NEWS</a></li>
+                <li><a href="careerpage.html">CAREER</a></li>
+                <li><a href="contactpage.html">CONTACT</a></li>
+
+                <!-- Search Form-->
+
+                <form id="searchnewsearch" method="get">
+                    <input type="text" class="searchtextinput" name="q" maxlength="120">
+                    <input type="submit" value="Search" class="searchbutton">
+                </form>
+                <!--end of search form-->
+
+            </ul>
+        </nav>
+        <!-- end of navigation -->
+
+    </header>
+    <!-- end of header-->
+
+
+
+    <!-- section for the background image -->
+    <section>
+        <img src="images/plan.jpg" alt="background" width="100%" height="100%">
+    </section>
+    <!-- end section for the background image -->
+
+
+
+    <!-- Section for introducing bizait -->
+    <section class="section-boxed" id="section-1">
+
+        <div class="column-layout">
+            <h2><strong>BIZAIT PROFESSIONAL IT SUPPORT</strong></h2>
+
+            <p>Today's business climate demands your IT systems operate efficiently, are highly secure, and be online 24 hours a day. BizaIT provides integrated IT support and network design services that allow your company to maintain peak levels of performance
+                and productivity while maintaining security.
+            </p>
+
+        </div>
+    </section>
+    <!--end of section-->
+
+    <!-- div container to make a flex for 3 column-->
+    <div class="call-outs-container">
+
+        <!--1 container-->
+        <di class="call-out">
+            <h3>VISION.</h3>
+            <p>Be the partner of choice empowering our customers with value driven solutions and services.</p>
+        </di>
+
+        <!--2 container-->
+        <div class="call-out">
+            <h3>MISSION</h3>
+            <p>Maximize value for our customers by delivering high quality solutions and services; driven by intellect, innovation and integrity.</p>
+        </div>
+
+        <!--3 container-->
+        <div class="call-out">
+            <h3>MOTION</h3>
+            <p>Aspire to be the best in what we do and yield business results that maximize our ecosystem and value.</p>
+        </div>
+    </div>
+    <!--end of div container to make a flex for 3 column-->
+
+
+
+
+
+
+    <!--Who we are section -->
+    <section class="bizait-profile">
+        <div class="profile-box">
+            <h2><strong>Who We Are?</strong></h2>
+            <p><strong>BizaIT</strong> is a boutique IT consulting firm founded in 2018 based in Singapore with the purpose of promoting, disseminating and providing Advanced Services in Telecommunications, Systems Integration, Application Development and
+                Training. <br><br>With the growing demands for a technology in our society, IT Consulting business is there to give customer solution to any business problem, from development, design, consulting, coordination, installation and start-up
+                to a number of communication and development projects to its clients from international and Singaporean business community.
+            </p>
+        </div>
+    </section>
+    <!--Who we are section -->
+
+
+
+    <!--Footer start here -->
+    <footer id="footer" class="center">
+
+        <!-- div container to make a flex for 3 column-->
+        <div class="call-outs-footer">
+
+            <!--1 container-->
+            <di class="call-out-3">
+                <h4><a href="contactpage.html">Contact Us</a></h4>
+                <p>Vertex, Tower B #08-04, 33 Ubi Avenue 3 Singapore 408868.</p>
+                <p><i class="fa fa-phone"></i><abbr title="Phone">P</abbr>: Tel: +6581432776</p>
+                <p><i class="fa fa-envelope-o"></i><abbr title="Email">E</abbr>: <a href="morena@bizait.com">morena@bizait.com</a></p>
+                <p><i class="fa fa-clock-o"></i><abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM</p>
+            </di>
+
+            <!--2 container-->
+            <div class="call-out-3">
+                <h4 style="color: green;">Follow Us On</h4>
+                <p>Facebook:</p>
+                <a href="https://www.facebook.com/pages/category/Local-Business/BIZAIT-1659922440916794/" target="_blank">
+                    <i class="fa fa-facebook" aria-hidden="true" style="font-size:30px; margin-right:15px"></i>
+                </a>
+                <p>Linkedin: </p>
+                <a href="https://www.linkedin.com/company/bizait/about/" target="_blank">
+                    <i class="fa fa-linkedin" aria-hidden="true" style="font-size:30px; margin-right:15px"></i>
+                </a>
+            </div>
+
+            <!--3 container-->
+            <div class="call-out-3">
+                <form class=call-out-form>
+                    <h4><a href="newspage.html">Subscribe to our Newsletter</a></h4>
+                    <br>
+                    <input type="text" placeholder="Name" name="name" required>
+                    <input type="text" placeholder="Email address" name="mail" required>
+                    <label>
+                            <input type="checkbox" checked="checked" name="subscribe"> Daily Newsletter
+                        </label>
+                    <input type="submit" value="Subscribe">
+                </form>
+            </div>
+        </div>
+        <!--end of div container to make a flex for 3 column-->
+
+    </footer>
+    <!-- end #footer-->
+
+    <!--Javascript style for sticky header -->
+    <script>
+        window.onscroll = function() {
+            myFunction()
+        };
+        var header = document.getElementById("myHeader");
+        var sticky = header.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+    </script>
+    <!--Javascript style for sticky header -->
+</body>
+
+</html>

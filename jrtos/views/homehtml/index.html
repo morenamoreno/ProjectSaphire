@@ -2,184 +2,184 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" context="width =device-width, initial-scale = 1">
-<title>Junior Time Online System</title>
-<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<link href="public/stylesheets/main.css" rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" context="width =device-width, initial-scale = 1">
+	<title>Junior Time Online System</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link href="public/stylesheets/main.css" rel="stylesheet">
 
 </head>
 <body>
-	<!-- Navigation -->
-	<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#"> <img src="public/image/logo.png"></a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-				<span class="navbar-toggler-icon"></span>
-			</button> 
-				<div class="collapse navbar-collapse" id="navbarResponsive">
-					<ul class="navbar-nav ml-auto">
-						<li class="nav-item"> 
-							<a class="nav-link" href="index.html">Home</a>
-						</li>
-						<li class="nav-item"> 
-							<a class="nav-link" href="users.html">Users</a>
-						</li>
-						<li class="nav-item"> 
-							<a class="nav-link" href="#">Features</a>
-						</li>
-						<div class="nav-item">
-							<button type="button" onclick="myFunction()" class="nav-link" style="background: none!important; border: none;">Log In</button>
-							<div id="myDIV">
-							<form action="/login" method="post" >
-								<div class="title">
-								</div>
-								<div class="field">
-									<label>Username:</label>
-									<input type="text" name="username" />
-									<br />
-								</div>
-								<div class="field">
-									<label>Password:</label>
-									<input type="password" name="password" required />
-								</div>
-								<div class="field">
-									<input class="submit-btn" type="submit" value="Submit" required />
-								</div>
-								<label id="error-message"></label>
-							</form>
-						</div>
-							<script>window.onload = function() {
-								$("#myDIV").hide();
-							};
-							function myFunction() {
-								var x = document.getElementById("myDIV");
-								if (x.style.display === "none") {
-									x.style.display = "block";
-								} else {
-									x.style.display = "none";
-								}
-							}
-							</script>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="#"> <img src="public/image/logo.png"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="users.html">Users</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Features</a>
+				</li>
+				<div class="nav-item">
+					<button type="button" onclick="myFunction()" class="nav-link" style="background: none!important; border: none;">Log In</button>
+					<div id="myDIV">
+						<form action="/login" method="post" >
+							<div class="title">
+							</div>
+							<div class="field">
+								<label>Username:</label>
+								<input type="text" name="username" />
+								<br />
+							</div>
+							<div class="field">
+								<label>Password:</label>
+								<input type="password" name="password" required />
+							</div>
+							<div class="field">
+								<input class="submit-btn" type="submit" value="Submit" required />
+							</div>
+							<label id="error-message"></label>
+						</form>
+					</div>
+					<script>window.onload = function() {
+						$("#myDIV").hide();
+					};
+					function myFunction() {
+						var x = document.getElementById("myDIV");
+						if (x.style.display === "none") {
+							x.style.display = "block";
+						} else {
+							x.style.display = "none";
+						}
+					}
+					</script>
 
-						</li>
-						
-					</ul>
-				</div>
-			
+					</li>
 
+			</ul>
 		</div>
-	</nav>
-	<!--Image Slide-->
-	<div id="slides" class="carousel slide" data-ride="carousel">
-		<ul class="carousel-indicators">
-			<li data-target="#slides" data-slide-to="0" class="active"></li>
-			<li data-target="#slides" data-slide-to="1"></li>
-			<li data-target="#slides" data-slide-to="2"></li>
-			
-		</ul>
-		<div class="carousel-inner">
-			<div class="carousel-item active">
-				<img src="public/image/teacher.jpg">
-				<div class="carousel-caption">
-					<h2 class="display-2">Junior Time Online System</h2>
-					<h3>For Superstar School System</h3>
-					<p>An all in one child care system. Provides streamline operations, delight families and improve program quality.</p>
-					<button type="button" class="btn btn-primary btn-lg">Join Us!</button>
-				</div>			
+
+
+	</div>
+</nav>
+<!--Image Slide-->
+<div id="slides" class="carousel slide" data-ride="carousel">
+	<ul class="carousel-indicators">
+		<li data-target="#slides" data-slide-to="0" class="active"></li>
+		<li data-target="#slides" data-slide-to="1"></li>
+		<li data-target="#slides" data-slide-to="2"></li>
+
+	</ul>
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+			<img src="public/image/teacher.jpg">
+			<div class="carousel-caption">
+				<h2 class="display-2">Junior Time Online System</h2>
+				<h3>For Superstar School System</h3>
+				<p>An all in one child care system. Provides streamline operations, delight families and improve program quality.</p>
+				<button type="button" class="btn btn-primary btn-lg">Join Us!</button>
 			</div>
-			<div class="carousel-item">
-				<img src="public/image/class.jpg">
+		</div>
+		<div class="carousel-item">
+			<img src="public/image/class.jpg">
+		</div>
+		<div class="carousel-item">
+			<img src="public/image/k1.jpg">
+		</div>
+	</div>
+</div>
+
+<!--Why message-->
+<div class="container-fluid">
+	<div class=" row jumbotron">
+		<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xd-10">
+			<h2>Why Uses Junior Time Online System?</h2>
+			<p class="">Newly enhance system is being develop to provide communication between the teachers and parents. Online base administration features is added to have better school management system.</p>
+		</div>
+	</div>
+	<!--Features-->
+	<div class="container-fluid padding">
+		<div class="row welcome text-center">
+			<div class="col-12">
+				<h1 class="display-4">Why Uses Junior Time Online System? </h1>
+				<hr>
+				<div class="col-12">
+					<p>Newly enhance system is being develop
+						to provide communication between the teachers and parents. Online base administration features is added to have better school management system. With Junior Time, teachers and school save time by having all the tools they need to communicate with today’s parents and student on one easy-to-used online system.</p>
+				</div>
 			</div>
-			<div class="carousel-item">
-				<img src="public/image/k1.jpg">
-			</div>
-	</div>	
+		</div>
 	</div>
 
-	<!--Why message-->
-	<div class="container-fluid">
-		<div class=" row jumbotron">
-			<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xd-10">
-				<h2>Why Uses Junior Time Online System?</h2>
-				<p class="">Newly enhance system is being develop to provide communication between the teachers and parents. Online base administration features is added to have better school management system.</p>
+	<!-- Three column Section-->
+	<div class="container-fluid padding">
+		<div class="row text-center padding">
+			<div class="col-xs-12 col-sm-6 col-md-4">
+				<i class="far fa-comments"></i>
+				<h4>Parent Communication</h4>
+				<ul>
+					<li>Photos and Video sharing</li>
+					<li>Weekly Update</li>
+					<li>Student Report</li>
+					<li>Parent Teacher Conference</li>
+					<li>Calendars and Menus</li>
+				</ul>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-4">
+				<i class="far fa-edit"></i>
+				<h4>Teacher Documentation</h4>
+				<ul>
+					<li>Student Report</li>
+					<li>Program and activity planning</li>
+					<li>Parent Teacher Conference</li>
+					<li>Calendars and Menu</li>
+				</ul>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-4">
+				<i class="fa fa-file-o"></i>
+				<h4>Administrator reporting</h4>
+				<ul>
+					<li>Daily Sheet and Monthly Reports</li>
+					<li>Attendance</li>
+					<li>Create News and Events</li>
+					<li>Create Invoice</li>
+					<li>Health, Sleep check and more</li>
+				</ul>
 			</div>
 		</div>
-		<!--Features-->
-		<div class="container-fluid padding">
-			<div class="row welcome text-center">
-				<div class="col-12">
-					<h1 class="display-4">Why Uses Junior Time Online System? </h1>
-					<hr>
-					<div class="col-12">
-						<p>Newly enhance system is being develop 
-						to provide communication between the teachers and parents. Online base administration features is added to have better school management system. With Junior Time, teachers and school save time by having all the tools they need to communicate with today’s parents and student on one easy-to-used online system.</p>	
-					</div>
-				</div>
+	</div>
+
+	<div class="container-fluid padding">
+		<div class="row padding">
+			<div class="col-lg-6">
+				<h2>if you build it</h2>
+				<p>This is your place to find childcare activities to help you complete your best work and improve learning outcomes for children aged zero to five.
+				<p>All free and available to discuss, borrow and reuse! Consider this your "ECE Library" for new ideas and materials. Infants are naturally curious and providing them with new and exciting activities will always help in nurturing their curiosity and sense of adventure.</p><p> On top of our blog posts, you can also find here daycare activities submitted by early childhood educators just like you. These are activities are separated by domain, to help you find exactly what you are looking for.</p>
+			</div>
+			<div class="col-lg-6">
+				<img src="public/image/art.jpg" class="img-fluid">
 			</div>
 		</div>
-
-		<!-- Three column Section-->
-		<div class="container-fluid padding">
-			<div class="row text-center padding">
-				<div class="col-xs-12 col-sm-6 col-md-4">
-					<i class="far fa-comments"></i>
-					<h4>Parent Communication</h4>
-					<ul>
-						<li>Photos and Video sharing</li>
-						<li>Weekly Update</li>
-						<li>Student Report</li>
-						<li>Parent Teacher Conference</li>
-						<li>Calendars and Menus</li>
-					</ul>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-4">
-					<i class="far fa-edit"></i>
-					<h4>Teacher Documentation</h4>
-					<ul>
-						<li>Student Report</li>
-						<li>Program and activity planning</li>			
-						<li>Parent Teacher Conference</li>
-						<li>Calendars and Menu</li>
-					</ul>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-4">
-					<i class="fa fa-file-o"></i>
-					<h4>Administrator reporting</h4>
-					<ul>
-						<li>Daily Sheet and Monthly Reports</li>
-						<li>Attendance</li>
-						<li>Create News and Events</li>
-						<li>Create Invoice</li>
-						<li>Health, Sleep check and more</li>
-					</ul>
-				</div>
-			</div> 
-		</div>
-
-		<div class="container-fluid padding">
-			<div class="row padding">
-				<div class="col-lg-6">
-					<h2>if you build it</h2>
-					<p>This is your place to find childcare activities to help you complete your best work and improve learning outcomes for children aged zero to five. 
-					<p>All free and available to discuss, borrow and reuse! Consider this your "ECE Library" for new ideas and materials. Infants are naturally curious and providing them with new and exciting activities will always help in nurturing their curiosity and sense of adventure.</p><p> On top of our blog posts, you can also find here daycare activities submitted by early childhood educators just like you. These are activities are separated by domain, to help you find exactly what you are looking for.</p>
-				</div>
-				<div class="col-lg-6">
-					<img src="public/image/art.jpg" class="img-fluid">
-				</div>
-			</div>	
-		</div>
-		<hr class="my-4">
-		<!--Fixed Image background-->
-		<figure>
+	</div>
+	<hr class="my-4">
+	<!--Fixed Image background-->
+	<figure>
 		<div class="fixed-wrap">
 			<div id="fixed">
 			</div>
 		</div>
-		</figure>
-		<!-- Footer-->
-		<footer>
+	</figure>
+	<!-- Footer-->
+	<footer>
 		<div class="container-fluid padding">
 			<div class="row text-center">
 				<div class="col-md-4">
@@ -193,32 +193,32 @@
 					<h6>Term and Privacy</h6>
 					<hr class="light">
 					<h6>Support</h6>
-					<hr class="light">				
+					<hr class="light">
 				</div>
-				<div class="col-md-4" id="Newsletters">				
+				<div class="col-md-4" id="Newsletters">
 					<h6>Sign up for our Newsletters!</h6>
 					<hr class="light">
 					<div class="row justify-content-center">
-                		<div class="col-lg-6">
-                 	   		<form action="" method="">
-                      	  	<input type="email" name="email" placeholder="Enter your Email"><input type="submit" value="	Subscribe">
-                   		 	</form>
-               	 		</div>
-          			</div>
+						<div class="col-lg-6">
+							<form action="" method="">
+								<input type="email" name="email" placeholder="Enter your Email"><input type="submit" value="	Subscribe">
+							</form>
+						</div>
+					</div>
 				</div>
 				<div class="Copyright">
 					<small>&copy; Copyright 2020, Junior Time</small>
 				</div>
-			</div>		
+			</div>
 		</div>
-		</footer>	
+	</footer>
 
 
 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" ></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" ></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </body>
 </html>
 

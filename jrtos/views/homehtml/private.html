@@ -11,8 +11,7 @@
 <body>
 	<div class="wrapper">
     <!-- Sidebar -->
-    <div class="page-wrapper chiller-theme toggled">
-    	<a class="navbar-brand" href="#"> <img src="public/image/logo.png"></a>		
+    <div class="page-wrapper chiller-theme toggled">		
     	<a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
     	<i class="fas fa-bars"></i></a>
     	<nav id="sidebar" class="sidebar-wrapper">
@@ -129,48 +128,140 @@
   <!-- sidebar-wrapper  -->
   <main class="page-content">
     <div class="container-fluid">
-      <h2>Pro Sidebar</h2>
+    	<a class="navbar-brand" href="#"><img src="public/image/logo.png"></a>	
+      <h2>Student List</h2>
       <hr>
+		<select id="Class" class="selectpicker show-tick btn-primary btn-xs">
+		  <option value="" disabled selected>Select Classroom</option>
+		  <option value="N1-Water">N1-Water</option>
+		  <option value="N2-Earth">N2-Earth</option>
+		  <option value="K1-Fire">K1-Fire</option>
+		  <option value="K2-Air">K2-Air</option>
+		</select>
+		<div class="add-student">
+			<thead>
+   			 <a href="#" class="btn btn-info btn-xs pull-right"><b>+</b> Add New Student</a>
+   			 </thead>
+   			</div>
       <div class="row">
         <div class="form-group col-md-12">
-          <p>This is a responsive sidebar template with dropdown menu based on bootstrap 4 framework.</p>
-          <p> You can find the complete code on <a href="https://github.com/azouaoui-med/pro-sidebar-template" target="_blank">
-              Github</a>, it contains more themes and background image option</p>
-        </div>
-        <div class="form-group col-md-12">
-          <iframe src="https://ghbtns.com/github-btn.html?user=azouaoui-med&repo=pro-sidebar-template&type=star&count=true&size=large"
-            frameborder="0" scrolling="0" width="140px" height="30px"></iframe>
-          <iframe src="https://ghbtns.com/github-btn.html?user=azouaoui-med&repo=pro-sidebar-template&type=fork&count=true&size=large"
-            frameborder="0" scrolling="0" width="140px" height="30px"></iframe>
-        </div>
-      </div>
-      <h5>More templates</h5>
-      <hr>
-        <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">          
-          <div class="card rounded-0 p-0 shadow-sm">
-            <img src="https://user-images.githubusercontent.com/25878302/58369568-a49b2480-7efc-11e9-9ca9-2be44afacda1.png" class="card-img-top rounded-0" alt="Angular pro sidebar">
-            <div class="card-body text-center">
-                <h6 class="card-title">Angular Pro Sidebar</h6>
-                <a href="https://github.com/azouaoui-med/angular-pro-sidebar" target="_blank" class="btn btn-primary btn-sm">Github</a>
-                <a href="https://azouaoui-med.github.io/angular-pro-sidebar/demo/" target="_blank" class="btn btn-success btn-sm">Preview</a>
+           <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="text-center">ID</th>
+                            <th>Child Name</th>
+                            <th>Photo</th>
+                            <th>Attendance</th>
+                            <th>Report</th>
+                            <th class="text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td>Captain Marvel</td>
+                            <td><img class="img-responsive center" style="height: 35px; width: 35px;" src="public/image/photo1.png" alt=""></td>
+                            <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="outline-success" data-offstyle="outline-danger" data-width="80" data-height="20"></td>
+                            <td><button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal">Open</button><button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#myModal">Send</button></td>
+                            <td class="td-actions text-right">
+                                <button type="button" rel="tooltip" class="btn btn-info btn-just-icon btn-sm" data-original-title="" title="">
+                                    <i class="fas fa-user-alt"></i>
+                                </button>
+                                <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" data-original-title="" title="">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+    
+                            <td class="text-center">2</td>
+                            <td>Captain America</td>
+                            <td><img class="img-responsive center" style="height: 35px; width: 35px;" src="public/image/photo2.png" alt=""></td>
+                            <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="outline-success" data-offstyle="outline-danger" data-width="80" data-height="20"></td>
+                            <td><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Open</button><button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#myModal">Send</button></td>
+                            <td class="td-actions text-right">
+                                <button type="button" rel="tooltip" class="btn btn-info btn-just-icon btn-sm" data-original-title="" title="">
+                                    <i class="fas fa-user-alt"></i>
+                                </button>
+                                <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" data-original-title="" title="">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">3</td>
+                            <td>Black Widow</td>
+                            <td><img class="img-responsive center" style="height: 35px; width: 35px;" src="public/image/photo1.png" alt=""></td>
+                            <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="outline-success" data-offstyle="outline-danger" data-width="80" data-height="20"></td>
+                            <td><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open</button><button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#myModal">Send</button></td>
+                            <td class="td-actions text-right">
+                                <button type="button" rel="tooltip" class="btn btn-info btn-just-icon btn-sm" data-original-title="" title="">
+                                    <i class="fas fa-user-alt"></i>
+                                </button>
+                                <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" data-original-title="" title="">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">4</td>
+                            <td>Tyler Rake</td>
+                            <td><img class="img-responsive center" style="height: 35px; width: 35px;" src="public/image/photo2.png" alt=""></td>
+                            <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="outline-success" data-offstyle="outline-danger" data-width="80" data-height="20"></td>
+                            <td><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open</button><button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#myModal">Send</button></td>
+                            <td class="td-actions text-right">
+                                <button type="button" rel="tooltip" class="btn btn-info btn-just-icon btn-sm" data-original-title="" title="">
+                                    <i class="fas fa-user-alt"></i>
+                                </button>
+                                <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" data-original-title="" title="">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">5</td>
+                            <td>Black Panther,</td>
+                            <td><img class="img-responsive center" style="height: 35px; width: 35px;" src="public/image/photo2.png" alt=""></td>
+                            <td><input type="checkbox" checked data-toggle="toggle" data-onstyle="outline-success" data-offstyle="outline-danger" data-width="80" data-height="20"></td>
+                            <td><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open</button><button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#myModal">Send</button></td>
+                            <td class="td-actions text-right">
+                                <button type="button" rel="tooltip" class="btn btn-info btn-just-icon btn-sm" data-original-title="" title="">
+                                    <i class="fas fa-user-alt"></i>
+                                </button>
+                                <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" data-original-title="" title="">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-          </div>          
         </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">          
-          <div class="card rounded-0 p-0 shadow-sm">
-            <img src="https://user-images.githubusercontent.com/25878302/58369258-33f20900-7ef8-11e9-8ff3-b277cb7ed7b4.PNG" class="card-img-top rounded-0" alt="Angular pro sidebar">
-            <div class="card-body text-center">
-                <h6 class="card-title">Angular Dashboard</h6>
-                <a href="https://github.com/azouaoui-med/lightning-admin-angular" target="_blank" class="btn btn-primary btn-sm">Github</a>
-                <a href="https://azouaoui-med.github.io/lightning-admin-angular/demo/" target="_blank" class="btn btn-success btn-sm">Preview</a>
-            </div>
-          </div>          
-        </div>
+        
       </div>
     </div>
 
   </main>
+  <div class="next-page">
+  	<a href="#" class="btn btn-outline-success">&laquo; Previous</a>
+	<a href="#" class="btn btn-outline-success">Next &raquo;</a>
+   </div>
   <!-- page-content" -->
 </div>
 
@@ -213,7 +304,15 @@ $("#show-sidebar").click(function() {
    
    
 });
+$(document).ready(function() {
+    $('body').bootstrapMaterialDesign();
+    $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
+ 
+});
+
 </script>
+<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 
 </body>
 </html>

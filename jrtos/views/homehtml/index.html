@@ -13,7 +13,7 @@
 <body>
 <!-- Navigation -->
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
-	<div class="container-fluid">
+	<div id="nav-color" class="container-fluid">
 		<a class="navbar-brand" href="#"> <img src="public/image/logo.png"></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
 			<span class="navbar-toggler-icon"></span>
@@ -121,20 +121,22 @@
 	</div>
 
 	<!-- Three column Section-->
-	<div class="container-fluid padding">
-		<div class="row text-center padding">
-			<div class="col-xs-12 col-sm-6 col-md-4">
+	<div id="column-container" class="container-fluid padding">
+		<div class="row padding">
+			<div class="col-xs-12 col-sm-6 col-md-4" id="color1">
 				<i class="far fa-comments"></i>
-				<h4>Parent Communication</h4>
-				<ul>
+				<div class="features-body">
+				<h4 class="features-title">Parent Communication</h4>
+				<ul class="features-text">
 					<li>Photos and Video sharing</li>
 					<li>Weekly Update</li>
 					<li>Student Report</li>
 					<li>Parent Teacher Conference</li>
 					<li>Calendars and Menus</li>
 				</ul>
+				</div>
 			</div>
-			<div class="col-xs-12 col-sm-6 col-md-4">
+			<div class="col-xs-12 col-sm-6 col-md-4" id="color2">
 				<i class="far fa-edit"></i>
 				<h4>Teacher Documentation</h4>
 				<ul>
@@ -144,7 +146,7 @@
 					<li>Calendars and Menu</li>
 				</ul>
 			</div>
-			<div class="col-xs-12 col-sm-6 col-md-4">
+			<div  class="col-xs-12 col-sm-6 col-md-4" id="color3">
 				<i class="fa fa-cogs"></i>
 				<h4>Administrator reporting</h4>
 				<ul>
@@ -183,17 +185,23 @@
 		<div class="container-fluid padding">
 			<div class="row text-center">
 				<div class="col-md-4">
-					<img src="public/image/logo.png">
+					<a class="foot-logo"><img src="public/image/logo.png"></a>
 				</div>
 				<div class="col-md-4">
-					<h6>About Us</h6>
-					<hr class="light">
-					<h6>Contact Us</h6>
-					<hr class="light">
-					<h6>Term and Privacy</h6>
-					<hr class="light">
-					<h6>Support</h6>
-					<hr class="light">
+					<ul class="foot-nav">
+						<li>
+							<a href="#">About Us</a>
+						</li>						
+						<li>
+							<a href="#">Contact Us</a>
+						</li>						
+						<li>
+							<a href="#">Term and Privacy</a>
+						</li>						
+						<li>
+							<a href="#">Support</a></li>	
+					</ul>
+					
 				</div>
 				<div class="col-md-4" id="Newsletters">
 					<h6>Sign up for our Newsletters!</h6>
@@ -204,8 +212,30 @@
 								<input type="email" name="email" placeholder="Enter your Email"><input type="submit" value="	Subscribe">
 							</form>
 						</div>
+						
+						<div class="container-fluid padding" id="social-media">
+							<div class="row text-center padding">
+								<div class="col-12">
+								<h6>Follow us</h6>
+								</div>
+
+								<div class="col-12 social padding">
+							<a href="#">
+								<i class="fa fa-facebook"></i>
+							</a>
+							<a href="#">
+								<i class="fab fa-twitter"></i>
+							</a>
+							<a href="#">
+								<i class="fa fa-instagram"></i>
+							</a>
+							</div>
+							
+							</div>
+						</div>
 					</div>
 				</div>
+				
 				<div class="Copyright">
 					<small>&copy; Copyright 2020, Junior Time</small>
 				</div>
@@ -221,10 +251,3 @@
 	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </body>
 </html>
-
-<!-- <p>
-		<a href="#" class="btn btn-primary btn-xs" role="button">More info</a>
-		<button type="submit" class="btn btn-danger" role="button">Button</button>
-		<input type="button" value="Info" class="btn btn-info">
-		<button type="submit" class="btn-primary btn-sm" role="button">Button</button>
-	</p> -->

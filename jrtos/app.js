@@ -102,6 +102,11 @@ const UserDetail = new Schema({
 UserDetail.plugin(passportLocalMongoose);
 const UserDetails = mongoose.model('userInfo', UserDetail, 'userInfo');
 
+// UserDetails.deleteMany({}, function (err) {
+//     if(err) console.log(err);
+//     console.log("Successful deletion");
+// });
+
 /* PASSPORT LOCAL AUTHENTICATION */
 
 passport.use(UserDetails.createStrategy());
@@ -143,6 +148,11 @@ app.get('/login',
 app.get('/',
     connectEnsureLogin.ensureLoggedIn(),
     (req, res) => res.sendFile('views/homehtml/private.html', {root: __dirname})
+);
+
+app.get('/teacher',
+    connectEnsureLogin.ensureLoggedIn(),
+    (req, res) => res.sendFile('views/homehtml/teacher.html', {root: __dirname})
 );
 
 app.get('/private',

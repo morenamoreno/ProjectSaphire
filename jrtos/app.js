@@ -166,6 +166,7 @@ app.get('/user',
 );
 
 //REGISTER  USERS
+
 /*
 UserDetails.register({username:'Admin', active: false}, 'admin');
 UserDetails.register({username:'Teacher', active: false}, 'teacher');

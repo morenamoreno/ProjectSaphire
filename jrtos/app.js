@@ -155,6 +155,16 @@ app.get('/teacher',
     (req, res) => res.sendFile('views/homehtml/teacher.html', {root: __dirname})
 );
 
+app.get('/parent',
+    connectEnsureLogin.ensureLoggedIn(),
+    (req, res) => res.sendFile('views/homehtml/parent.html', {root: __dirname})
+);
+
+app.get('/studentportfolio',
+    connectEnsureLogin.ensureLoggedIn(),
+    (req, res) => res.sendFile('views/homehtml/studentportfolio.html', {root: __dirname})
+);
+
 app.get('/private',
     connectEnsureLogin.ensureLoggedIn(),
     (req, res) => res.sendFile('html/private.html', {root: __dirname})

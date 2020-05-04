@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" context="width =device-width, initial-scale = 1">
+  <title>Junior Time Online System</title>  
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link href="public/stylesheets/site.css" rel="stylesheet">
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <div class="page-wrapper chiller-theme toggled">    
+      <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+      <i class="fas fa-bars"></i></a>
+      <nav id="sidebar" class="sidebar-wrapper">
+        <div class="sidebar-content">
+          <div class="sidebar-brand">       
+              <div id="close-sidebar">
+                  <i class="fas fa-times"></i>
+              </div>
+          </div>
+           <div class="sidebar-header">
+              <div class="user-pic">
+                <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+            alt="User picture">
+        </div>
+        <div class="user-info">
+          <span class="user-name">Maria
+            <strong>Montero</strong>
+          </span>
+          <span class="user-role">Parent</span>
+          <span class="user-status">
+            <i class="fa fa-circle"></i>
+            <span>Online</span>
+          </span>
+        </div>
+      </div>
+      <!-- sidebar-header  -->
+      <div class="sidebar-search">
+        <div>
+          <div class="input-group">
+            <input type="text" class="form-control search-menu" placeholder="Search...">
+            <div class="input-group-append">
+              <span class="input-group-text">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- sidebar-search  -->
+      <div class="sidebar-menu">
+        <ul>
+          <li class="sidebar-dropdown">
+            <a href="teacher">
+              <i class="fas fa-user"></i>
+              <span>Profile</span>
+              <span class="badge badge-pill badge-danger"></span>
+            </a>
+          </li>
+          <li class="sidebar-dropdown">
+            <a  href="/">
+              <i class="fas fa-user-graduate"></i>
+              <span>Students</span>
+              <span class="badge badge-pill badge-warning"></span>
+            </a>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fas fa-envelope"></i>
+              <span>Message</span>
+            </a>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-users"></i>
+              <span>Community</span>
+            </a>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fas fa-copy"></i>
+              <span>Invoice</span>
+            </a>
+          </li>
+
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fas fa-cog"></i>
+              <span>Settings</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- sidebar-menu  -->
+    </div>
+    <!-- sidebar-content  -->
+    <div class="sidebar-footer">
+      <a href="#">
+        <i class="fa fa-bell"></i>
+        <span class="badge badge-pill badge-warning notification">3</span>
+      </a>
+      <a href="#">
+        <i class="fa fa-envelope"></i>
+        <span class="badge badge-pill badge-success notification">7</span>
+      </a>
+      <a href="#">
+        <i class="fa fa-cog"></i>
+        <span class="badge-sonar"></span>
+      </a>
+      <a href="#">
+        <i class="fa fa-power-off"></i>
+      </a>
+    </div>
+</nav>
+  
+  <!-- sidebar-wrapper  -->
+  <main class="page-content">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="public/image/logo.png"></a>  
+      <h2 class="card-title font-weight-bold">About</h2>
+      <hr>
+    <p class="card-description"><strong>Student Information</strong></p>
+    <!--Content-->
+            <div class="col-md-9">
+                <div class="dashboard-area">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mb-3 bg-dark">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <a class="position-absolute ml-3 mt-3 text-white" href="setting.html" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Edit cover images"><i class="fas fa-cog"></i></a>
+                                        <div class="row">
+                                            <div class="col-md-6 ml-auto mr-auto">
+                                               <div class="profiles p-3 my-4 rounded text-center shadow-sm">
+                                                    <div class="avatars">
+                                                        <a>
+                                                            <img src="public/image/hugo.jpg" alt="Circle Image" class="avatar-lg rounded-circle img-fluid" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Edit avatar images">
+                                                        </a>
+                                                    </div>
+                                                    <div class="names">
+                                                        <h3 class="title text-light">Hugo Jorge</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                     </div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active show" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Hugo's Reports</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Student Portfolio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Weekly Update</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade active show" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-sm-6">
+                                            <a class="member-item" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
+                                                <div class="card mb-2 mb-md-5 py-3">
+                                                    <div class="content">
+                                                        <div class="row">
+                                                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                                                <div class="icon-big text-warning text-center">
+                                                                    <i class="fas fa-copy"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                                                <div class="numbers">
+                                                                    <p>Attendance</p>
+                                                                     View
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-6">
+                                            <a class="member-item" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
+                                                <div class="card mb-2 mb-md-5 py-3">
+                                                    <div class="content">
+                                                        <div class="row">
+                                                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                                                <div class="icon-big text-info text-center" title="1 new comment">
+                                                                    <div class="notif"></div>
+                                                                    <i class="far fa-calendar"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                                                <div class="numbers">
+                                                                    <p>TimeTable</p>
+                                                                    View 
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-6">
+                                            <a class="member-item" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">
+                                                <div class="card mb-2 mb-md-5 py-3">
+                                                    <div class="content">
+                                                        <div class="row">
+                                                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                                                <div class="icon-big text-danger text-center">
+                                                                    <i class="fas fa-bread-slice"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6 d-flex justify-content-center align-items-center">
+                                                                <div class="numbers">
+                                                                    <p>Meal plan</p>
+                                                                    View 
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                    <div class="p-3 border mb-3">
+                                        <a class="position-absolute" style="right: 25px" href="setting.html" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Edit profile"><i class="fas fa-cog"></i></a>
+                                        <h3>Jenifer Tan</h3>
+                                        <p><b>Jobs:</b> Writter</p>
+                                        <p><b>About:</b> Hello my name is Jenifer, My passion is writting. I hope you enjoy with my article.</p>
+                                        <p><b>Address:</b> Street 12 vo 05, California, United States</p>
+                                        <p><b>Phone:</b> +1 987654321</p>
+                                        
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                    <div class="p-3 border mb-3">
+                                        <h5>Recently Published</h5>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <ul class="list-unstyled statistics">
+                                                    <li>
+                                                        <span class="text-primary">Oct 20</span> <a class="h6" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">Toyota Sienna rates marginal in passenger-side overlap crash test</a>
+                                                    </li>
+                                                    <li>
+                                                        <span class="text-primary">Oct 12</span> <a class="h6" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">Ford reveals autonomous vehicle philosophies, priorities</a>
+                                                    </li>
+                                                    <li>
+                                                        <span class="text-primary">Oct 7</span> <a class="h6" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">Offer Hints to How Dogs Became Domesticated</a>
+                                                    </li>
+                                                    <li>
+                                                        <span class="text-primary">Oct 6</span> <a class="h6" href="https://bootstrap.news/bootstrap-4-template-news-portal-magazine/">Consumer apprehension grows over autonomous tech, study says</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+  </main>
+</div>
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" ></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<script>
+jQuery(function ($) {
+
+    $(".sidebar-dropdown > a").click(function() {
+  $(".sidebar-submenu").slideUp(200);
+  if (
+    $(this)
+      .parent()
+      .hasClass("active")
+  ) {
+    $(".sidebar-dropdown").removeClass("active");
+    $(this)
+      .parent()
+      .removeClass("active");
+  } else {
+    $(".sidebar-dropdown").removeClass("active");
+    $(this)
+      .next(".sidebar-submenu")
+      .slideDown(200);
+    $(this)
+      .parent()
+      .addClass("active");
+  }
+});
+
+$("#close-sidebar").click(function() {
+  $(".page-wrapper").removeClass("toggled");
+});
+$("#show-sidebar").click(function() {
+  $(".page-wrapper").addClass("toggled");
+});
+   
+   
+});
+$(document).ready(function() {
+    $('body').bootstrapMaterialDesign();
+    $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
+ 
+});
+
+</script>
+<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
+</body>
+</html>

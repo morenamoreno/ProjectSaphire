@@ -9,6 +9,22 @@
   <link href="public/stylesheets/site.css" rel="stylesheet">
 </head>
 <body>
+<div class="message-box">
+  <p style="text-align:right" id="welcome-message"></p>
+  <a href="/private">Go to private area</a>
+</div>
+
+<script>
+  const req = new XMLHttpRequest();
+  req.onreadystatechange = function () {
+    if (req.readyState == 4 && req.status == 200) {
+      const user = JSON.parse(req.response).user;
+      document.getElementById("welcome-message").innerText = `Welcome ${user.username}, logged in as Parent!`;
+    }
+  };
+  req.open("GET", "http://localhost:3000/user", true);
+  req.send();
+</script>
   <div class="wrapper">
     <!-- Sidebar -->
     <div class="page-wrapper chiller-theme toggled">    

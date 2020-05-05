@@ -133,8 +133,12 @@ app.post('/login', (req, res, next) => {
           if (err) {
             return next(err);
           }
-
-          return res.redirect('/');
+          if (user.username=="Teacher")
+              return res.redirect('/teacher');
+          else if (user.username=="Parent")
+              return res.redirect('/parent');
+          else
+              return res.redirect('/');
         });
 
       })(req, res, next);

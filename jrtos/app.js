@@ -63,6 +63,9 @@ module.exports = app;
 
 const express = require('express');
 const app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+
 
 app.use(express.static(__dirname));
 
@@ -78,7 +81,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressSession);
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log('App listening on port ' + port));
+//app.listen(port, () => console.log('App listening on port ' + port));
+var server = http.listen(3000, () => {
+    console.log('server is running on port', server.address().port);
+});
 
 /*  PASSPORT SETUP  */
 
@@ -97,6 +103,17 @@ const Schema = mongoose.Schema;
 const UserDetail = new Schema({
   username: String,
   password: String
+});
+
+var Message = mongoose.model('Message',{
+    name : String,
+    message : String,
+    date : String,
+})
+
+Message.deleteMany({}, function (err) {
+    if(err) console.log(err);
+    console.log("Successful deletion");
 });
 
 UserDetail.plugin(passportLocalMongoose);
@@ -149,6 +166,11 @@ app.get('/login',
         { root: __dirname })
 );
 
+app.get('/chat',
+    (req, res) => res.sendFile('views/homehtml/chat.html',
+        { root: __dirname })
+);
+
 app.get('/',
     connectEnsureLogin.ensureLoggedIn(),
     (req, res) => res.sendFile('views/homehtml/private.html', {root: __dirname})
@@ -186,3 +208,131 @@ UserDetails.register({username:'Admin', active: false}, 'admin');
 UserDetails.register({username:'Teacher', active: false}, 'teacher');
 UserDetails.register({username:'Parent', active: false}, 'parent');
 */
+
+
+app.get('/messages', (req, res) => {
+    Message.find({},(err, messages)=> {
+        res.send(messages);
+    })
+})
+
+app.get('/messages/:user', (req, res) => {
+    var user = req.params.user
+    Message.find({name: user},(err, messages)=> {
+        res.send(messages);
+    })
+})
+
+app.post('/messages', async (req, res) => {
+    try{
+        var message = new Message(req.body);
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var mTime = date+' '+time;
+        message.date = mTime.toString();
+        var savedMessage = await message.save()
+        console.log('saved');
+
+        var censored = await Message.findOne({message:'badword'});
+        if(censored)
+            await Message.remove({_id: censored.id})
+        else
+            io.emit('message', req.body);
+        res.sendStatus(200);
+    }
+    catch (error){
+        res.sendStatus(500);
+        return console.log('error',error);
+    }
+    finally{
+        console.log('Message Posted')
+    }
+
+})
+
+io.on('connection', () =>{
+    console.log('a user is connected')
+})
+
+
+
+/*
+var express = require('express'); //
+var bodyParser = require('body-parser')//
+var app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+var mongoose = require('mongoose');
+
+app.use(express.static(__dirname));//
+app.use(bodyParser.json());//
+app.use(bodyParser.urlencoded({extended: false}))//?
+
+var Message = mongoose.model('Message',{
+    name : String,
+    message : String,
+    date : String,
+})
+
+Message.deleteMany({}, function (err) {
+    if(err) console.log(err);
+    console.log("Successful deletion");
+});
+
+var dbUrl = 'mongodb://localhost:27017/jrtos'
+
+app.get('/messages', (req, res) => {
+    Message.find({},(err, messages)=> {
+        res.send(messages);
+    })
+})
+
+app.get('/messages/:user', (req, res) => {
+    var user = req.params.user
+    Message.find({name: user},(err, messages)=> {
+        res.send(messages);
+    })
+})
+
+app.post('/messages', async (req, res) => {
+    try{
+        var message = new Message(req.body);
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var mTime = date+' '+time;
+        message.date = mTime.toString();
+        var savedMessage = await message.save()
+        console.log('saved');
+
+        var censored = await Message.findOne({message:'badword'});
+        if(censored)
+            await Message.remove({_id: censored.id})
+        else
+            io.emit('message', req.body);
+        res.sendStatus(200);
+    }
+    catch (error){
+        res.sendStatus(500);
+        return console.log('error',error);
+    }
+    finally{
+        console.log('Message Posted')
+    }
+
+})
+
+io.on('connection', () =>{
+    console.log('a user is connected')
+})
+
+mongoose.connect(dbUrl ,{useMongoClient : true} ,(err) => {
+    console.log('mongodb connected',err);
+})
+
+var server = http.listen(3000, () => {
+    console.log('server is running on port', server.address().port);
+});
+
+ */

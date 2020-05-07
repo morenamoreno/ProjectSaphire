@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First Node App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <br>
+    <div id="messages">
+        <style>
+            * {
+                margin: 0px;
+                padding: 0px;
+            }
+
+            .box3 {
+                width: 300px;
+                margin: 10px auto;
+                border-radius: 15px;
+                background: #00bfb6;
+                color: #fff;
+                padding: 10px;
+                text-align: right;
+                font-weight: 900;
+                font-family: arial;
+                position: relative;
+            }
+
+            .box4 {
+                width: 300px;
+                margin: 10px auto;
+                border-radius: 15px;
+                background: #33AFFF;
+                color: #fff;
+                padding: 10px;
+                text-align: center;
+                font-weight: 900;
+                font-family: arial;
+                position: relative;
+            }
+
+
+            /* speech bubble 13 */
+
+            .sb13:before {
+                content: "";
+                width: 0px;
+                height: 0px;
+                position: absolute;
+                border-left: 15px solid #00bfb6;
+                border-right: 15px solid transparent;
+                border-top: 15px solid #00bfb6;
+                border-bottom: 15px solid transparent;
+                right: -16px;
+                top: 0px;
+            }
+
+
+            /* speech bubble 14 */
+
+            .sb14:before {
+                content: "";
+                width: 0px;
+                height: 0px;
+                position: absolute;
+                border-left: 15px solid transparent;
+                border-right: 15px solid #33AFFF;
+                border-top: 15px solid #33AFFF;
+                border-bottom: 15px solid transparent;
+                left: -16px;
+                top: 0px;
+            }
+
+        </style>
+    </div>
+    <div>
+        <br>
+        <input id = "name" class="form-control" placeholder="Name">
+        <br>
+        <textarea id = "message" class="form-control" placeholder="Type a message..." style="border: 0px"></textarea>
+        <br>
+        <button id="send" class="btn btn-success" style="float: right;">Send</button>
+    </div>
+</div>
+<script>
+    var socket = io();
+    $(() => {
+        $("#send").click(()=>{
+            var today = new Date();
+            var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            var mTime = date+' '+time;
+
+
+            sendMessage({name: $("#name").val(), message: $("#message").val(), date: mTime.toString()});
+            document.getElementById("message").value = "";
+        })
+
+        getMessages()
+    })
+
+    socket.on('message', addMessages)
+
+    function addMessages(message){
+        if (message.name=="test")
+            $("#messages").append(`<div title="${message.date}" class="box3">${message.message}</div>`)
+        else
+            $("#messages").append(`<div title="${message.date}" class="box4 sb14">${message.name}: ${message.message}</div>`)
+    }
+
+    function getMessages(){
+        $.get('http://localhost:3000/messages', (data) => {
+            data.forEach(addMessages);
+        })
+    }
+
+    function sendMessage(message){
+        $.post('http://localhost:3000/messages', message)
+    }
+</script>
+</body>
+</html>

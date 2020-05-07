@@ -7,6 +7,17 @@
 	<title>Junior Time Online System</title>	
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link href="public/stylesheets/site.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 <body>
 <div class="message-box">
@@ -20,11 +31,120 @@
         if (req.readyState == 4 && req.status == 200) {
             const user = JSON.parse(req.response).user;
             document.getElementById("welcome-message").innerText = `Welcome ${user.username}!`;
+            document.getElementById("name").value = user.username;
         }
     };
     req.open("GET", "http://localhost:3000/user", true);
     req.send();
 </script>
+
+<div class="container">
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Chat</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Chat with: Parent</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="container">
+                        <br>
+                        <div id="messages">
+                            <style>
+                                * {
+                                    margin: 0px;
+                                    padding: 0px;
+                                }
+
+                                .box3 {
+                                    width: 300px;
+                                    margin: 10px auto;
+                                    border-radius: 15px;
+                                    background: #00bfb6;
+                                    color: #fff;
+                                    padding: 10px;
+                                    text-align: right;
+                                    font-weight: 900;
+                                    font-family: arial;
+                                    position: relative;
+                                }
+
+                                .box4 {
+                                    width: 300px;
+                                    margin: 10px auto;
+                                    border-radius: 15px;
+                                    background: #33AFFF;
+                                    color: #fff;
+                                    padding: 10px;
+                                    text-align: center;
+                                    font-weight: 900;
+                                    font-family: arial;
+                                    position: relative;
+                                }
+
+
+                                /* speech bubble 13 */
+
+                                .sb13:before {
+                                    content: "";
+                                    width: 0px;
+                                    height: 0px;
+                                    position: absolute;
+                                    border-left: 15px solid #00bfb6;
+                                    border-right: 15px solid transparent;
+                                    border-top: 15px solid #00bfb6;
+                                    border-bottom: 15px solid transparent;
+                                    right: -16px;
+                                    top: 0px;
+                                }
+
+
+                                /* speech bubble 14 */
+
+                                .sb14:before {
+                                    content: "";
+                                    width: 0px;
+                                    height: 0px;
+                                    position: absolute;
+                                    border-left: 15px solid transparent;
+                                    border-right: 15px solid #33AFFF;
+                                    border-top: 15px solid #33AFFF;
+                                    border-bottom: 15px solid transparent;
+                                    left: -16px;
+                                    top: 0px;
+                                }
+
+                            </style>
+                        </div>
+                        <div>
+                            <br>
+                            <input type="hidden" id = "name" class="form-control" placeholder="Name">
+                            <br>
+                            <textarea id = "message" class="form-control" placeholder="Type a message..." style="border: 0px"></textarea>
+                            <br>
+                            <button id="send" class="btn btn-success" style="float: right;">Send</button>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
 	<div class="wrapper">
     <!-- Sidebar -->
     <div class="page-wrapper chiller-theme toggled">		
@@ -262,10 +382,7 @@
 </div>
 
 
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" ></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
 <script>
 jQuery(function ($) {
 
@@ -300,15 +417,50 @@ $("#show-sidebar").click(function() {
    
    
 });
-$(document).ready(function() {
-    $('body').bootstrapMaterialDesign();
-    $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
- 
-});
+// $(document).ready(function() {
+//     $('body').bootstrapMaterialDesign();
+//     $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
+//
+// });
 
 </script>
-<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+        </script>
 
+        <script>
+        var socket = io();
+        $(() => {
+            $("#send").click(()=>{
+                var today = new Date();
+                var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+                var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                var mTime = date+' '+time;
+
+
+                sendMessage({name: $("#name").val(), message: $("#message").val(), date: mTime.toString()});
+                document.getElementById("message").value = "";
+            })
+
+            getMessages()
+        })
+
+        socket.on('message', addMessages)
+
+        function addMessages(message){
+            if (message.name=="Teacher")
+                $("#messages").append(`<div title="${message.date}" class="box3">${message.message}</div>`)
+            else
+                $("#messages").append(`<div title="${message.date}" class="box4 sb14">${message.name}: ${message.message}</div>`)
+        }
+
+        function getMessages(){
+            $.get('http://localhost:3000/messages', (data) => {
+                data.forEach(addMessages);
+            })
+        }
+
+        function sendMessage(message){
+            $.post('http://localhost:3000/messages', message)
+        }
+        </script>
 </body>
 </html>

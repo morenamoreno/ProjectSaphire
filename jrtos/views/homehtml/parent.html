@@ -22,7 +22,6 @@
 <body>
 <div class="message-box">
   <p style="text-align:right" id="welcome-message"></p>
-  <a href="/private">Go to private area</a>
 </div>
 
 <script>
@@ -39,7 +38,6 @@
 </script>
 <div class="container">
   <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Chat</button>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
@@ -202,8 +200,8 @@
             </a>
           </li>
           <li class="sidebar-dropdown">
-            <a href="#">
-              <i class="fas fa-envelope"></i>
+            <a href="">
+              <i class="far fa-comment"></i>
               <span>Message</span>
             </a>
           </li>
@@ -219,13 +217,6 @@
               <span>Invoice</span>
             </a>
           </li>
-
-          <li class="sidebar-dropdown">
-            <a href="#">
-              <i class="fas fa-cog"></i>
-              <span>Settings</span>
-            </a>
-          </li>
         </ul>
       </div>
       <!-- sidebar-menu  -->
@@ -235,10 +226,6 @@
       <a href="#">
         <i class="fa fa-bell"></i>
         <span class="badge badge-pill badge-warning notification">3</span>
-      </a>
-      <a href="#">
-        <i class="fa fa-envelope"></i>
-        <span class="badge badge-pill badge-success notification">7</span>
       </a>
       <a href="#">
         <i class="fa fa-cog"></i>
@@ -254,7 +241,7 @@
   <main class="page-content">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><img src="public/image/logo.png"></a>  
-      <h2 class="card-title font-weight-bold"> User Information</h2>
+      <h2 class="card-title font-weight-bold"> Personal Information</h2>
       <hr>
                 <ul class="about">
                   <li class="about-items"><i class="mdi mdi-account icon-sm "></i><span class="about-item-name">Name: </span><span class="about-item-detail">Maria Montero</span></li>
@@ -265,6 +252,8 @@
                   <li class="about-items"><i class="mdi mdi-email-outline icon-sm "></i><span class="about-item-name">Email: </span><span class="about-item-detail"><a href="">mariamontero@gmail.com</a></span></li>
                   <a href="" class="about-item-edit"> Edit Info</a>
                 </ul>
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Chat</button>
+
     </div>
 
   </main>
